@@ -8,7 +8,6 @@
         <style media="screen">
             img {
                 display: block;
-                width: 100%;
             }
 
             .line {
@@ -22,55 +21,46 @@
 
             .x-tree {
                 position: relative;
-                perspective: 3000px;
+                perspective: 300px;
                 transform-style: preserve-3d;
-                transform-origin: bottom;
-
-                animation: rotate-x-tree 5s linear infinite;
 
                 height: 400px;
                 width: 300px;
             }
 
             .tree {
+                width: 100%;
                 position: absolute;
-                bottom: 0;
+                top: 0;
                 left: 0;
                 right: 0;
                 margin: auto;
-            }
-
-            @keyframes rotate-x-tree {
-                0% {
-                    transform: rotateY(0deg);
-                }
-                100% {
-                    transform: rotatey(360deg);
-                }
+                transform: rotatey(0deg);
+                transition: transform 5s linear;
             }
 
 
-            .tree1 {
+            .x-tree:hover .tree1 {
                 transform: rotatey(30deg);
             }
 
-            .tree2 {
+            .x-tree:hover .tree2 {
                 transform: rotatey(60deg);
             }
 
-            .tree3 {
+            .x-tree:hover .tree3 {
                 transform: rotatey(90deg);
             }
 
-            .tree4 {
+            .x-tree:hover .tree4 {
                 transform: rotatey(120deg);
             }
 
-            .tree5 {
+            .x-tree:hover .tree5 {
                 transform: rotatey(150deg);
             }
 
-            .tree6 {
+            .x-tree:hover .tree6 {
                 transform: rotatey(180deg);
             }
 
@@ -84,6 +74,7 @@
             <img class="tree tree4" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
             <img class="tree tree5" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
             <img class="tree tree6" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
+            hover me!!
         </div>
     </body>
 </html>
