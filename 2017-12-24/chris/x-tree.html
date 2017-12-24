@@ -8,6 +8,7 @@
         <style media="screen">
             img {
                 display: block;
+                width: 100%;
             }
 
             .line {
@@ -23,11 +24,13 @@
                 position: relative;
                 perspective: 300px;
                 transform-style: preserve-3d;
+                transform-origin: bottom;
 
                 height: 400px;
                 width: 300px;
             }
 
+            .start,
             .tree {
                 width: 100%;
                 position: absolute;
@@ -35,10 +38,25 @@
                 left: 0;
                 right: 0;
                 margin: auto;
-                transform: rotatey(0deg);
-                transition: transform 5s linear;
+                transition: transform 5s, opacity 5s;
+
             }
 
+            .start {
+                height: 71px;
+                overflow: hidden;
+                background-color: #fff;
+                opacity: .2;
+            }
+
+            .tree {
+                transform: rotatey(0deg);
+                opacity: .2;
+            }
+
+            .x-tree:hover .start {
+                opacity: 1;
+            }
 
             .x-tree:hover .tree1 {
                 transform: rotatey(30deg);
@@ -67,14 +85,19 @@
         </style>
     </head>
     <body>
+
         <div class="x-tree">
-            <img class="tree tree1" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
-            <img class="tree tree2" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
-            <img class="tree tree3" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
-            <img class="tree tree4" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
-            <img class="tree tree5" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
-            <img class="tree tree6" src="http://www.miankoutu.com/upfiles/2017-09-26/59c940196334626929.png" alt="">
-            hover me!!
+            Hover it
+            <img class="tree tree1" src="./tree.png" alt="">
+            <img class="tree tree2" src="./tree.png" alt="">
+            <img class="tree tree3" src="./tree.png" alt="">
+            <img class="tree tree4" src="./tree.png" alt="">
+            <img class="tree tree5" src="./tree.png" alt="">
+            <img class="tree tree6" src="./tree.png" alt="">
+            <div class="start">
+                <img src="./tree.png" alt="">
+            </div>
         </div>
+
     </body>
 </html>
