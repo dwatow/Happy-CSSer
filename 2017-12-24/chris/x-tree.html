@@ -11,20 +11,10 @@
                 width: 100%;
             }
 
-            .line {
-                position: absolute;
-                top: 0;
-                left: 40%;
-                width: 1px;
-                height: 100%;
-                background-color: #f00;
-            }
-
             .x-tree {
                 position: relative;
                 perspective: 300px;
                 transform-style: preserve-3d;
-                transform-origin: bottom;
 
                 height: 400px;
                 width: 300px;
@@ -39,15 +29,18 @@
                 right: 0;
                 margin: auto;
                 transition: transform 5s, opacity 5s;
-
+                transform-origin: bottom;
             }
 
             .start {
-                height: 71px;
-                overflow: hidden;
-                background-color: #fff;
-                opacity: .2;
+                text-align: center;
+                font-size: 1.6em;
+                top: 109px;
+                color: #FF9800;
+                transform: translateZ(151px);
+                filter: drop-shadow(0 0 4px #FF9800);
             }
+
 
             .tree {
                 transform: rotatey(0deg);
@@ -56,6 +49,17 @@
 
             .x-tree:hover .start {
                 opacity: 1;
+                animation: chris 5s infinite;
+            }
+
+            @keyframes chris {
+                0%,
+                100% {
+                    filter: drop-shadow(0 0 1px yellow);
+                }
+                50% {
+                    filter: drop-shadow(0 0 8px #FF9800);
+                }
             }
 
             .x-tree:hover .tree1 {
@@ -85,7 +89,7 @@
         </style>
     </head>
     <body>
-
+        
         <div class="x-tree">
             Hover it
             <img class="tree tree1" src="./tree.png" alt="">
@@ -94,10 +98,9 @@
             <img class="tree tree4" src="./tree.png" alt="">
             <img class="tree tree5" src="./tree.png" alt="">
             <img class="tree tree6" src="./tree.png" alt="">
-            <div class="start">
-                <img src="./tree.png" alt="">
-            </div>
+            <div class="start">★</div>
         </div>
+
 
     </body>
 </html>
